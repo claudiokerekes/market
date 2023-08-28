@@ -6,7 +6,7 @@ module Api
         @orders ||= user.orders
       end
       def create
-        @order = OrdersService.new(cart).create
+        @order = OrdersService.new(cart).create if cart.cart_products.any?
       end
 
       private

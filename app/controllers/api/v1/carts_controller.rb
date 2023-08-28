@@ -34,7 +34,7 @@ module Api
         end
 
         def cart
-         @cart ||= Cart.find_or_create_by!(user_id: user.id)
+         @cart ||= Cart.find_or_create_by!(user_id: user.id, finished: false)
         end
 
         def user

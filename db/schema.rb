@@ -28,13 +28,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_181140) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.boolean "finished", default: false
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
   create_table "order_products", force: :cascade do |t|
     t.bigint "product_id", null: false
-    t.decimal "discount", default: "0.0"
     t.integer "quantity", default: 0
+    t.integer "product_price", default: 0
     t.decimal "subtotal", default: "0.0"
     t.bigint "order_id", null: false
     t.datetime "created_at", null: false
@@ -46,7 +47,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_181140) do
   create_table "orders", force: :cascade do |t|
     t.bigint "cart_id", null: false
     t.decimal "shipping", default: "0.0"
-    t.decimal "total", default: "0.0"
+    t.decimal "discounts", default: "0.0"
+    t.decimal "subtotal", default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
