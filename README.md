@@ -1,24 +1,16 @@
-# README
+# Tarket
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is to show, as a summary, my Ruby on rails skills.
 
-Things you may want to cover:
+Assumptions
 
-* Ruby version
+* The market has a minimal "header security"
+* Corner cases were not considered
+* Principal features tested
+* CI implemented
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Test locally with DOCKER
+*  Download this repo
+* in the root path of the project, run: `docker-compose up -d` . You must have Docker installed
+* Use the postman collection found in the root path of the project to test these endpoints.
+* In case of database connection problems, please, rename the database host to: `db` in the config/database.yml file
